@@ -12,6 +12,7 @@ and open the template in the editor.
     </head>
     <script type="text/javascript">
         function checkForm(form) {
+            var result = true;
             var numbers = /^[0-9|\.]+$/;
             var checkFields = new Array(
                     form.age,
@@ -23,9 +24,18 @@ and open the template in the editor.
                 if (!checkFields[i].value.match(numbers)) {
                     alert(checkFields[i].name + " field must be a number");
                     checkFields[i].focus();
-                    return false;
+                    result = false;
+                    break;
                 }
             }
+            return result;
+        }
+        
+        function optionChange(form) {
+            if (checkForm(form)) {
+                form.submit();
+            }
+            
         }
     </script>
     <body>
@@ -39,8 +49,11 @@ and open the template in the editor.
                                 Select Gender:
                             </td>
                             <td>
-                                <input type="text" name="gender" id="gender"/>
-                                <input type="submit" value="OK" style="visibility: hidden;"/>
+                                <select name="gender" id="gender" onchange="optionChange(this.form)">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                
                                 <jsp:useBean id="WebTest" scope="session" class="drunkstuff.view.WebView" />
                                 <jsp:setProperty name="WebTest" property="gender" />
                                 <jsp:setProperty name="WebTest" property="age" />
