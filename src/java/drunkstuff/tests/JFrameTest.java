@@ -1,7 +1,7 @@
 package drunkstuff.tests;
 
 import drunkstuff.controller.Calculator_Controller;
-import drunkstuff.view.Calculator_View;
+import drunkstuff.view.JPanelView;
 import drunkstuff.calculator.Person;
 import javax.swing.JFrame;
 
@@ -21,13 +21,12 @@ public class JFrameTest {
      */
     public static void main(String[] args) {
         Person person = new Person();
-        Calculator_View view = new Calculator_View(person);
-        Calculator_Controller controller = 
-                new Calculator_Controller(view, person);
+        JPanelView view = new JPanelView(person);
+        Calculator_Controller controller = new Calculator_Controller(view, person);
         JFrame frame = new JFrame();
         frame.add(view);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setBounds(Calculator_View.bounds);
+        frame.setBounds(JPanelView.bounds);
         frame.setVisible(true);
     }
 }

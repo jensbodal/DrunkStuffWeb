@@ -23,7 +23,7 @@ and open the template in the editor.
                             <td>
                                 <input type="text" name="gender" id="gender"/>
                                 <input type="submit" value="OK" style="visibility: hidden;"/>
-                                <jsp:useBean id="WebTest" scope="session" class="drunkstuff.tests.WebTest" />
+                                <jsp:useBean id="WebTest" scope="session" class="drunkstuff.view.WebView" />
                                 <jsp:setProperty name="WebTest" property="gender" />
                                 <jsp:setProperty name="WebTest" property="age" />
                                 <jsp:setProperty name="WebTest" property="weight" />

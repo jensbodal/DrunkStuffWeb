@@ -6,7 +6,7 @@
 package drunkstuff.tests;
 
 import drunkstuff.controller.Calculator_Controller;
-import drunkstuff.view.Calculator_View;
+import drunkstuff.view.JPanelView;
 import drunkstuff.calculator.Person;
 import javax.swing.JApplet;
 
@@ -23,7 +23,7 @@ import javax.swing.JApplet;
 public class AppletTest extends JApplet {
     public AppletTest() {
         Person person = new Person();
-        Calculator_View view = new Calculator_View(person);
+        JPanelView view = new JPanelView(person);
         Calculator_Controller controller = 
                 new Calculator_Controller(view, person);
         this.add(view);

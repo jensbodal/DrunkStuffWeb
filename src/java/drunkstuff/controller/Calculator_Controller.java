@@ -5,7 +5,7 @@
 package drunkstuff.controller;
 
 import drunkstuff.calculator.Person;
-import drunkstuff.view.Calculator_View;
+import drunkstuff.view.JPanelView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,10 +14,10 @@ import java.awt.event.ActionListener;
  * @author Jens Bodal
  */
 public class Calculator_Controller {
-    private Calculator_View view;
+    private JPanelView view;
     private Person person;
     
-    public Calculator_Controller(Calculator_View view, Person person) {
+    public Calculator_Controller(JPanelView view, Person person) {
         this.person = person;
         this.view = view;
         this.addActionListeners();

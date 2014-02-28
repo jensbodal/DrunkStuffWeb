@@ -1,5 +1,5 @@
 /*
- * Calculator_View.java
+ * JPanelView.java
  */ 
 
 package drunkstuff.view;
@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  *
  * @author Jens Bodal
  */
-public class Calculator_View extends JPanel {
+public class JPanelView extends JPanel {
     /*
      * Storing these values here to be called upon for tests if default
      * values are wanted
@@ -54,7 +54,7 @@ public class Calculator_View extends JPanel {
     
     private Person person;
     
-    public Calculator_View(Person person) {
+    public JPanelView(Person person) {
         this.person = person;
         startup();
     }

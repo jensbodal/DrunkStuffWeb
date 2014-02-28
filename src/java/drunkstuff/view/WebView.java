@@ -1,4 +1,4 @@
-package drunkstuff.tests;
+package drunkstuff.view;
 
 import drunkstuff.calculator.Person;
 import drunkstuff.controller.Calculator_Controller;
@@ -8,7 +8,7 @@ import drunkstuff.controller.Calculator_Controller;
  *
  * @author jensb
  */
-public class WebTest {
+public class WebView {
     private Person person;
     private String gender;
     private double BAC;
@@ -18,7 +18,7 @@ public class WebTest {
     private double hours; 
     private String results;
     
-    public WebTest() {
+    public WebView() {
         person = new Person();
         Calculator_Controller controller = new Calculator_Controller(person);
         updatePerson();
