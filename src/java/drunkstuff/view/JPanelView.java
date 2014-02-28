@@ -30,25 +30,25 @@ public class JPanelView extends JPanel {
     public final static Rectangle bounds = 
             new Rectangle(X, Y, v_WIDTH, v_HEIGHT);
     private final Dimension fieldDimensions = new Dimension(50, 20);
-    private FlowLayout panelLayout = new FlowLayout(FlowLayout.LEFT);
+    private final FlowLayout panelLayout = new FlowLayout(FlowLayout.LEFT);
     // Gender
-    private JComboBox genderChooser;
-    private String gender_Label = "Choose Gender:";
+    private JComboBox<String> genderChooser;
+    private final String gender_Label = "Choose Gender:";
     // BAC
     private JTextField BAC_Field;
-    private String BAC_Label = "BAC:";
+    private final String BAC_Label = "BAC:";
     // Age
     private JTextField age_Field;
-    private String age_Label = "Age:";
+    private final String age_Label = "Age:";
     // Weight
     private JTextField weight_Field;
-    private String weight_Label = "Weight:";
+    private final String weight_Label = "Weight:";
     // Number of Drinks
     private JTextField drinks_Field;
-    private String drinks_Label = "Number of Drinks";
+    private final String drinks_Label = "Number of Drinks";
     // Hours since first drink
     private JTextField hours_Field;
-    private String hours_Label = "Hours since first drink:";
+    private final String hours_Label = "Hours since first drink:";
     // Results Field
     private JLabel results_Field;
     
@@ -167,8 +167,8 @@ public class JPanelView extends JPanel {
     }
     
     private void initGenderChooser() {
-        String[] sexes = person.getGenders();
-        genderChooser = new JComboBox(sexes);
+        String sexes[] = person.getGenders();
+        genderChooser = new JComboBox<String>(sexes);
     }
     
     public String getSelectedGender() {
