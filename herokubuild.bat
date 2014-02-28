@@ -1,0 +1,1 @@
+heroku deploy:war --war dist\DrunkStuffWeb.war --app drunkstuff
