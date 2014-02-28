@@ -88,7 +88,7 @@ public class Calculator_Controller {
                 try {
                     weight = Double.parseDouble(ae.getActionCommand());
                 }
-                catch (Exception e) {
+                catch (NumberFormatException e) {
                     //e.printStackTrace();
                 }
                 person = new Person(

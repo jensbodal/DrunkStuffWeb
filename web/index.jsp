@@ -13,7 +13,7 @@ and open the template in the editor.
     <body>
         <div>
             <h1>BAC Calculator</h1>
-            <form name="Name Input Form" action="index.jsp" method="POST">
+            <form name="Name Input Form" action="index.jsp" method="POST" onsubmit="return checkForm()">
                 <table border="1">
                     <tbody>
                         <tr>

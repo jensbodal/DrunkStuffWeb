@@ -94,14 +94,31 @@ public class WebView {
     public double getWeight() {
         return weight;
     }
-
-    /**
-     * @param weight the weight to set
-     */
+    
     public void setWeight(double weight) {
         person = new Person(
                 this.gender, 
                 weight, 
+                this.age, 
+                this.drinks, 
+                this.hours);
+        updatePerson();
+    }
+
+    /**
+     * @param weight_s the weight to set
+     */
+    public void setWeight(String weight_s) {
+        double weight_d;
+        try {
+            weight_d = Double.valueOf(weight_s);
+        }
+        catch (NumberFormatException nfe) {
+            weight_d = Person.DEFAULT_WEIGHT;
+        }
+        person = new Person(
+                this.gender, 
+                weight_d, 
                 this.age, 
                 this.drinks, 
                 this.hours);
