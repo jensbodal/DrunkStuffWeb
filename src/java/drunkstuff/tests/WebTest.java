@@ -26,11 +26,11 @@ public class WebTest {
     
     private void updatePerson() {
         this.gender = person.getGender();
-        this.BAC = person.getBAC();
         this.age = person.getAge();
         this.weight = person.getWeight();
         this.drinks = person.getNumberOfDrinks();
         this.hours = person.getHoursSinceFirstDrink();
+        this.setBAC(person.getBAC());
         this.setResults(person.toString());
     }
 

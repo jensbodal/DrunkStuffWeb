@@ -28,9 +28,13 @@ and open the template in the editor.
                                 <script type ="text/javascript">
                                     document.getElementById('gender').value = '<jsp:getProperty name="WebTest" property="gender" />';
                                 </script>
-                                Your BAC is: <jsp:getProperty name="WebTest" property="BAC" />
                             </td>
                         </tr> 
+                        <tr>
+                            <td>
+                                <jsp:getProperty name="WebTest" property="results" />
+                            </td>
+                        </tr>
                         <tr>
                             <td>
                                 Age:
