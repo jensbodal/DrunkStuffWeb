@@ -84,10 +84,17 @@ and open the template in the editor.
                             </td>
                         </tr>
                         <tr>
-                            <td colSpan="3">
-                                <jsp:getProperty name="WebTest" property="results" />
-                            </td>
-                        </tr>
+                            <td colspan="3">
+                    <center>
+                        <input type="submit" value="Submit" />   
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td colSpan="3">
+                            <jsp:getProperty name="WebTest" property="results" />
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </form>
