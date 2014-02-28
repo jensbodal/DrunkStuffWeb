@@ -10,10 +10,28 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    <script type="text/javascript">
+        function checkForm(form) {
+            var numbers = /^[0-9|\.]+$/;
+            var checkFields = new Array(
+                    form.age,
+                    form.weight,
+                    form.drinks,
+                    form.hours);
+            
+            for (i=0; i < checkFields.length; i++) {
+                if (!checkFields[i].value.match(numbers)) {
+                    alert(checkFields[i].name + " field must be a number");
+                    checkFields[i].focus();
+                    return false;
+                }
+            }
+        }
+    </script>
     <body>
         <div>
             <h1>BAC Calculator</h1>
-            <form name="Name Input Form" action="index.jsp" method="POST" onsubmit="return checkForm()">
+            <form name="Name Input Form" action="index.jsp" method="POST" onsubmit="return checkForm(this)">
                 <table border="1">
                     <tbody>
                         <tr>
@@ -30,8 +48,7 @@ and open the template in the editor.
                                 <jsp:setProperty name="WebTest" property="drinks" />
                                 <jsp:setProperty name="WebTest" property="hours" />
                                 <script type ="text/javascript">
-                                    document.getElementById('gender').value = '<jsp:getProperty name="WebTest" property="gender" />';
-                                </script>
+                                    document.getElementById('gender').value = '<jsp:getProperty name="WebTest" property="gender" />';</script>
                                 Your BAC is: <jsp:getProperty name="WebTest" property="BAC" />
                             </td>
                         </tr> 
@@ -43,8 +60,7 @@ and open the template in the editor.
                                 <input type="text" name="age" id="age"/>
                                 <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
-                                    document.getElementById('age').value = '<jsp:getProperty name="WebTest" property="age" />';
-                                </script>
+                                    document.getElementById('age').value = '<jsp:getProperty name="WebTest" property="age" />';</script>
                             </td>
                         </tr>
                         <tr>
@@ -55,8 +71,7 @@ and open the template in the editor.
                                 <input type="text" name="weight" id="weight"/>
                                 <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
-                                    document.getElementById('weight').value = '<jsp:getProperty name="WebTest" property="weight" />';
-                                </script>
+                                    document.getElementById('weight').value = '<jsp:getProperty name="WebTest" property="weight" />';</script>
                             </td>
                         </tr>
                         <tr>
@@ -67,8 +82,7 @@ and open the template in the editor.
                                 <input type="text" name="drinks" id="drinks"/>
                                 <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
-                                    document.getElementById('drinks').value = '<jsp:getProperty name="WebTest" property="drinks" />';
-                                </script>
+                                    document.getElementById('drinks').value = '<jsp:getProperty name="WebTest" property="drinks" />';</script>
                             </td>
                         </tr>
                         <tr>
