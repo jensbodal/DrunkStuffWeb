@@ -95,7 +95,7 @@ public class WebView {
         return weight;
     }
     
-    public void setWeight(double weight) {
+    public void setWeight(double weight) throws NumberFormatException {
         person = new Person(
                 this.gender, 
                 weight, 
