@@ -46,13 +46,11 @@ public class Person implements abs {
     }
     
     private void setGender(String gender) {
-        switch(gender) {
-            case FEMALE: 
-                this.gender = FEMALE;
-                break;
-            case MALE:
-                this.gender = MALE;
-                break;
+        if (gender.equals(FEMALE)) {
+            this.gender = FEMALE;
+        }
+        if (gender.equals(MALE)) {
+            this.gender = MALE;
         }
     }
     
