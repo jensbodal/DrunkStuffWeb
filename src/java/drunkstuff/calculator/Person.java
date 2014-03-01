@@ -88,9 +88,9 @@ public class Person implements abs {
 
     public String AmIDrunk() {
         if (BAC >= legality.getLegalBAC()) {
-            return "Drunk";
+            return "drunk";
         } else {
-            return "Sober";
+            return "sober";
         }
     }
 

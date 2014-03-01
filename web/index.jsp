@@ -19,8 +19,8 @@ and open the template in the editor.
                     form.weight,
                     form.drinks,
                     form.hours);
-            
-            for (i=0; i < checkFields.length; i++) {
+
+            for (i = 0; i < checkFields.length; i++) {
                 if (!checkFields[i].value.match(numbers)) {
                     alert(checkFields[i].name + " field must be a number");
                     checkFields[i].focus();
@@ -30,12 +30,12 @@ and open the template in the editor.
             }
             return result;
         }
-        
+
         function optionChange(form) {
             if (checkForm(form)) {
                 form.submit();
             }
-            
+
         }
     </script>
     <body>
@@ -53,7 +53,7 @@ and open the template in the editor.
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select>
-                                
+
                                 <jsp:useBean id="WebTest" scope="session" class="drunkstuff.view.WebView" />
                                 <jsp:setProperty name="WebTest" property="gender" />
                                 <jsp:setProperty name="WebTest" property="age" />
@@ -119,8 +119,12 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td colSpan="3">
+                    <center>
+                        <h2>
                             <jsp:getProperty name="WebTest" property="results" />
-                        </td>
+                        </h2>
+                    </center>
+                    </td>
                     </tr>
                     </tbody>
                 </table>
