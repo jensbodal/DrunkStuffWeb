@@ -54,15 +54,15 @@ and open the template in the editor.
                                     <option value="Female">Female</option>
                                 </select>
 
-                                <jsp:useBean id="WebTest" scope="session" class="drunkstuff.view.WebView" />
-                                <jsp:setProperty name="WebTest" property="gender" />
-                                <jsp:setProperty name="WebTest" property="age" />
-                                <jsp:setProperty name="WebTest" property="weight" />
-                                <jsp:setProperty name="WebTest" property="drinks" />
-                                <jsp:setProperty name="WebTest" property="hours" />
+                                <jsp:useBean id="WebViewBean" scope="session" class="drunkstuff.view.WebView" />
+                                <jsp:setProperty name="WebViewBean" property="gender" />
+                                <jsp:setProperty name="WebViewBean" property="age" />
+                                <jsp:setProperty name="WebViewBean" property="weight" />
+                                <jsp:setProperty name="WebViewBean" property="drinks" />
+                                <jsp:setProperty name="WebViewBean" property="hours" />
                                 <script type ="text/javascript">
-                                    document.getElementById('gender').value = '<jsp:getProperty name="WebTest" property="gender" />';</script>
-                                Your BAC is: <jsp:getProperty name="WebTest" property="BAC" />
+                                    document.getElementById('gender').value = '<jsp:getProperty name="WebViewBean" property="gender" />';</script>
+                                Your BAC is: <jsp:getProperty name="WebViewBean" property="BAC" />
                             </td>
                         </tr> 
                         <tr>
@@ -73,7 +73,7 @@ and open the template in the editor.
                                 <input type="text" name="age" id="age"/>
                                 <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
-                                    document.getElementById('age').value = '<jsp:getProperty name="WebTest" property="age" />';</script>
+                                    document.getElementById('age').value = '<jsp:getProperty name="WebViewBean" property="age" />';</script>
                             </td>
                         </tr>
                         <tr>
@@ -84,7 +84,7 @@ and open the template in the editor.
                                 <input type="text" name="weight" id="weight"/>
                                 <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
-                                    document.getElementById('weight').value = '<jsp:getProperty name="WebTest" property="weight" />';</script>
+                                    document.getElementById('weight').value = '<jsp:getProperty name="WebViewBean" property="weight" />';</script>
                             </td>
                         </tr>
                         <tr>
@@ -95,7 +95,7 @@ and open the template in the editor.
                                 <input type="text" name="drinks" id="drinks"/>
                                 <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
-                                    document.getElementById('drinks').value = '<jsp:getProperty name="WebTest" property="drinks" />';</script>
+                                    document.getElementById('drinks').value = '<jsp:getProperty name="WebViewBean" property="drinks" />';</script>
                             </td>
                         </tr>
                         <tr>
@@ -106,7 +106,7 @@ and open the template in the editor.
                                 <input type="text" name="hours" id="hours"/>
                                 <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
-                                    document.getElementById('hours').value = '<jsp:getProperty name="WebTest" property="hours" />';
+                                    document.getElementById('hours').value = '<jsp:getProperty name="WebViewBean" property="hours" />';
                                 </script>
                             </td>
                         </tr>
@@ -121,7 +121,7 @@ and open the template in the editor.
                         <td colSpan="3">
                     <center>
                         <h2>
-                            <jsp:getProperty name="WebTest" property="results" />
+                            <jsp:getProperty name="WebViewBean" property="results" />
                         </h2>
                     </center>
                     </td>
