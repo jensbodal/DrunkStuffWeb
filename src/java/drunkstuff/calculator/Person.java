@@ -8,6 +8,7 @@ public class Person implements abs {
 
     public static final String FEMALE = "Female";
     public static final String MALE = "Male";
+    public static final String DEFAULT_GENDER = MALE;
     public static final int MINIMUM_AGE = 12;
     public static final double DEFAULT_WEIGHT = 150;
     public static final int DEFAULT_AGE = 21;
@@ -24,7 +25,7 @@ public class Person implements abs {
     private BAC_Calculator calc;
 
     public Person() {
-        this(MALE, DEFAULT_WEIGHT, DEFAULT_AGE, DEFAULT_DRINKS, DEFAULT_HOURS);
+        this(DEFAULT_GENDER, DEFAULT_WEIGHT, DEFAULT_AGE, DEFAULT_DRINKS, DEFAULT_HOURS);
     }
 
     public Person(String gender, double weight, int age,

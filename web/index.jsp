@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>Am I Drunk?</title>
@@ -32,6 +28,7 @@ and open the template in the editor.
         }
 
         function optionChange(form) {
+
             if (checkForm(form)) {
                 form.submit();
             }
@@ -41,12 +38,14 @@ and open the template in the editor.
     <body>
         <div>
             <h1>BAC Calculator</h1>
-            <form name="Name Input Form" action="index.jsp" method="POST" onsubmit="return checkForm(this)">
+            <form name="Name Input Form" action="./FormValidation" method="GET" onsubmit="return checkForm(this)">
                 <table border="1">
                     <tbody>
                         <tr>
                             <td>
                                 Select Gender:
+                                <br />
+
                             </td>
                             <td>
                                 <select name="gender" id="gender" onchange="optionChange(this.form)">
@@ -54,12 +53,18 @@ and open the template in the editor.
                                     <option value="Female">Female</option>
                                 </select>
 
+
                                 <jsp:useBean id="WebViewBean" scope="session" class="drunkstuff.view.WebView" />
-                                <jsp:setProperty name="WebViewBean" property="gender" />
-                                <jsp:setProperty name="WebViewBean" property="age" />
-                                <jsp:setProperty name="WebViewBean" property="weight" />
-                                <jsp:setProperty name="WebViewBean" property="drinks" />
-                                <jsp:setProperty name="WebViewBean" property="hours" />
+                                <c:set var="gender" scope="session" value="${WebViewBean.gender}" />
+                                <c:set var="age" scope="session" value="${WebViewBean.age}" />
+                                <c:set var="weight" scope="session" value="${WebViewBean.weight}" />
+                                <c:set var="drinks" scope="session" value="${WebViewBean.drinks}" />
+                                <c:set var="hours" scope="session" value="${WebViewBean.hours}" />
+                                <jsp:setProperty name="WebViewBean" property="gender" value="${gender}" />
+                                <jsp:setProperty name="WebViewBean" property="age" value="${age}" />
+                                <jsp:setProperty name="WebViewBean" property="weight" value="${weight}" />
+                                <jsp:setProperty name="WebViewBean" property="drinks" value="${drinks}" />
+                                <jsp:setProperty name="WebViewBean" property="hours" value="${hours}" />
                                 <script type ="text/javascript">
                                     document.getElementById('gender').value = '<jsp:getProperty name="WebViewBean" property="gender" />';</script>
                                 Your BAC is: <jsp:getProperty name="WebViewBean" property="BAC" />
@@ -71,7 +76,6 @@ and open the template in the editor.
                             </td>
                             <td>
                                 <input type="text" name="age" id="age"/>
-                                <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
                                     document.getElementById('age').value = '<jsp:getProperty name="WebViewBean" property="age" />';</script>
                             </td>
@@ -82,9 +86,9 @@ and open the template in the editor.
                             </td>
                             <td>
                                 <input type="text" name="weight" id="weight"/>
-                                <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
-                                    document.getElementById('weight').value = '<jsp:getProperty name="WebViewBean" property="weight" />';</script>
+                                    document.getElementById('weight').value = '<jsp:getProperty name="WebViewBean" property="weight" />';
+                                </script>
                             </td>
                         </tr>
                         <tr>
@@ -93,7 +97,6 @@ and open the template in the editor.
                             </td>
                             <td>
                                 <input type="text" name="drinks" id="drinks"/>
-                                <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
                                     document.getElementById('drinks').value = '<jsp:getProperty name="WebViewBean" property="drinks" />';</script>
                             </td>
@@ -104,7 +107,6 @@ and open the template in the editor.
                             </td>
                             <td>
                                 <input type="text" name="hours" id="hours"/>
-                                <input type="submit" value="OK" style="visibility: hidden;"/>
                                 <script type ="text/javascript">
                                     document.getElementById('hours').value = '<jsp:getProperty name="WebViewBean" property="hours" />';
                                 </script>

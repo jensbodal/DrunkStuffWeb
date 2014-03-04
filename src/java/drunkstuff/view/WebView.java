@@ -95,6 +95,18 @@ public class WebView {
         return weight;
     }
     
+
+    public void setWeight(String weight_s) {
+        double weight_d;
+        try {
+            weight_d = Double.valueOf(weight_s);
+        }
+        catch (NumberFormatException e) {
+            weight_d = Person.DEFAULT_WEIGHT;
+        }
+        setWeight(weight_d);        
+    }
+    
     public void setWeight(double weight) throws NumberFormatException {
         person = new Person(
                 this.gender, 
@@ -105,25 +117,6 @@ public class WebView {
         updatePerson();
     }
 
-    /**
-     * @param weight_s the weight to set
-     */
-    public void setWeight(String weight_s) {
-        double weight_d;
-        try {
-            weight_d = Double.valueOf(weight_s);
-        }
-        catch (NumberFormatException nfe) {
-            weight_d = Person.DEFAULT_WEIGHT;
-        }
-        person = new Person(
-                this.gender, 
-                weight_d, 
-                this.age, 
-                this.drinks, 
-                this.hours);
-        updatePerson();
-    }
 
     /**
      * @return the drinks
