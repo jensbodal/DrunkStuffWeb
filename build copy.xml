@@ -10,7 +10,13 @@
 <project name="DrunkStuffWeb" default="default" basedir=".">
     <description>Builds, tests, and runs the project DrunkStuffWeb.</description>
     <import file="nbproject/build-impl.xml"/>
-
+	<target name="-post-run-deploy">
+		<echo message="Pushing to Heroku" />
+		<property name="createIndex" value="${basedir}\" />
+		<exec dir="${createIndex}" executable="cmd">
+			<arg line="/c herokubuild.bat" />
+		</exec>
+	</target>
     <!--
 
     There exist several targets which are by default empty and which can be 
